@@ -19,6 +19,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = moveInput * moveSpeed;
+
+        /*if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
+        {
+            moveInput.y = 0;
+        }
+        else
+        {
+            moveInput.x = 0;
+        }*/
     }
     
     public void Move(InputAction.CallbackContext context)
