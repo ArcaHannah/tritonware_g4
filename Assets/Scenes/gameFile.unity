@@ -2827,7 +2827,7 @@ GameObject:
   - component: {fileID: 1683886432}
   - component: {fileID: 1683886431}
   m_Layer: 0
-  m_Name: test key_0
+  m_Name: Key1
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

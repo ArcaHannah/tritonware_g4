@@ -6,6 +6,11 @@ public class InventoryController : MonoBehaviour
     public GameObject slotPrefab;
     public int slotCount;
     public GameObject[] itemPrefabs;
+
+    public static bool hasKey = false;
+
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +35,15 @@ public class InventoryController : MonoBehaviour
             if (slot != null && slot.currentItem == null)
             {
                 GameObject newItem = Instantiate(itemPrefab, slotTransform);
-                newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                //Transform itemTransform = newItem.transform;
+                RectTransform rectTransform = newItem.GetComponent<RectTransform>();
+                if (rectTransform != null)
+            {
+                rectTransform.localScale = Vector3.one;       // Reset scale (important for UI parenting)
+                rectTransform.anchoredPosition = Vector2.zero; // Center the item in the slot
+            }
+                slot.currentItem = newItem;
+                //newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 return true;
             }
         }
