@@ -3,7 +3,10 @@ using UnityEngine;
 public class PlayerItemCollector : MonoBehaviour
 {
 private InventoryController inventoryController;
-    private Collider2D collectibleItemCollider = null; 
+    private Collider2D collectibleItemCollider = null;
+
+    [SerializeField]
+    private GameObject interactionMessage;
 
     void Start()
     {
@@ -13,17 +16,27 @@ private InventoryController inventoryController;
     // Called once per frame
     void Update()
     {
-        // if player is touching an item and E is pressed
-        if (collectibleItemCollider != null && Input.GetKeyDown(KeyCode.E))
-        {
-            bool itemAdded = inventoryController.AddItem(collectibleItemCollider.gameObject);
-            if (itemAdded)
-            {
-                // makes reference to the item about to be collected
-                GameObject collectedGameObject = collectibleItemCollider.gameObject;
-                collectibleItemCollider = null; // clears item reference
+        // disable interaction message by default
+        interactionMessage.SetActive(false);
 
-                Destroy(collectedGameObject); 
+        // if player is touching an item
+        if (collectibleItemCollider != null)
+        {
+            // enable message telling player to hit E
+            interactionMessage.SetActive(true);
+
+            // if E is pressed
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                bool itemAdded = inventoryController.AddItem(collectibleItemCollider.gameObject);
+                if (itemAdded)
+                {
+                    // makes reference to the item about to be collected
+                    GameObject collectedGameObject = collectibleItemCollider.gameObject;
+                    collectibleItemCollider = null; // clears item reference
+
+                    Destroy(collectedGameObject);
+                }
             }
         }
     }
