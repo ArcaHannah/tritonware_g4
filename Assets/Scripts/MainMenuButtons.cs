@@ -5,7 +5,7 @@ public class MainMenuButtons : MonoBehaviour
 {
     public void StartButton()
     {
-        SceneManager.LoadScene("gameFile");
+        SceneManager.LoadScene("IntroVN");
     }
 
 }

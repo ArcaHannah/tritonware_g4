@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueScript : MonoBehaviour
 {
@@ -61,6 +62,7 @@ public class DialogueScript : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            SceneManager.LoadScene("gameFile");
         }
     }
 }
