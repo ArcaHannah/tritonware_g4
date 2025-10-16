@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class puzzle2scripttest : MonoBehaviour
+public class puzzle2scripttest : InventoryController
 {
 
-    public static int numKnives = 4;
+    // true number of knives player has to collect for the puzzle
+    public static int numKnives = 3;
+    private bool puzzleActive = true;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,19 +14,16 @@ public class puzzle2scripttest : MonoBehaviour
         //erm
     }
 
-    void Update()
-    {
-        /*for (int i = numKnives;  knifeCount == 0; knifeCount--)
-        {
-            
-        }*/
-    }
-    
-    // updates the number of knives and returns the number of knives left
-    int UpdateKnifeCount(int knifeCount)
+
+    // updates the number of knives
+    void UpdatePuzzleTwo()
     {
         knifeCount = numKnives - knifeCount;
-        return knifeCount;
+        if (puzzleActive && knifeCount == 0)
+        {
+            eyeballCount++;
+            puzzleActive = false;
+        }
     }
 
 
