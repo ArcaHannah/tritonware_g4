@@ -7,7 +7,13 @@ public class InventoryController : MonoBehaviour
     public int slotCount;
     public GameObject[] itemPrefabs;
 
-    public static bool hasKey = false;
+    public static bool hasKeyBedroom = false;
+    public static bool hasKeyMRoom = false;
+    public static bool hasEyeball = false;
+    public static int eyeballCount = 0;
+    public static bool hasKnife = false;
+    public static int knifeCount = 0;
+ 
 
 
     

@@ -210,8 +210,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 693275906}
   lines:
-  - test
-  - test 2
+  - In my restless dreams, I see that town.
+  - collect my eyeballs
   textSpeed: 0.1
 --- !u!1 &643186717
 GameObject:
