@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - Door
+  - Flavor Text
   layers:
   - Default
   - TransparentFX
