@@ -10,7 +10,7 @@ public class puzzle1scripttest : MonoBehaviour
         {"Green", 1},
         {"Yellow", 3}
     };
-    private bool puzzleActive = true;
+    //private bool puzzleActive = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
