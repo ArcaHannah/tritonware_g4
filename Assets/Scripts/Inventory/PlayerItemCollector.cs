@@ -5,8 +5,8 @@ public class PlayerItemCollector : MonoBehaviour
 private InventoryController inventoryController;
     private Collider2D collectibleItemCollider = null;
 
-    [SerializeField]
-    private GameObject interactionMessage;
+    //[SerializeField]
+    //private GameObject interactionMessage;
 
     void Start()
     {
@@ -17,13 +17,13 @@ private InventoryController inventoryController;
     void Update()
     {
         // disable interaction message by default
-        interactionMessage.SetActive(false);
+        //interactionMessage.SetActive(false);
 
         // if player is touching an item
         if (collectibleItemCollider != null)
         {
             // enable message telling player to hit E
-            interactionMessage.SetActive(true);
+            //interactionMessage.SetActive(true);
 
             // if E is pressed
             if (Input.GetKeyDown(KeyCode.E))
