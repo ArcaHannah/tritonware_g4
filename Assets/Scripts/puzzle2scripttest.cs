@@ -18,12 +18,12 @@ public class puzzle2scripttest : InventoryController
     // updates the number of knives
     void UpdatePuzzleTwo()
     {
-        knifeCount = numKnives - knifeCount;
+        /*knifeCount = numKnives - knifeCount;
         if (puzzleActive && knifeCount == 0)
         {
             eyeballCount++;
             puzzleActive = false;
-        }
+        }*/
     }
 
 
