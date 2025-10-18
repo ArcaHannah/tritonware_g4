@@ -1534,8 +1534,8 @@ Transform:
   m_GameObject: {fileID: 190344036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.44, y: 2.24, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.2, y: 3.11, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1568,7 +1568,7 @@ Transform:
   m_GameObject: {fileID: 235302749}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.15, y: -2.68, z: 0}
+  m_LocalPosition: {x: -17.400072, y: -2.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5052,8 +5052,8 @@ Transform:
   m_GameObject: {fileID: 1902435742}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.529928, y: 1.6575, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -20.78, y: 1.6575, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1010474656}
@@ -5197,7 +5197,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2029583595}
   - component: {fileID: 2029583597}
-  - component: {fileID: 2029583596}
   m_Layer: 0
   m_Name: PhotoDrawer
   m_TagString: Untagged
@@ -5220,19 +5219,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1902435744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2029583596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029583594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3edf8cd398734b5d8f4df8af88de97b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: "* it\u2019s a photo of my mother and I.\\n* It\u2019s the only one we have. "
 --- !u!61 &2029583597
 BoxCollider2D:
   m_ObjectHideFlags: 0
