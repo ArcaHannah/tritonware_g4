@@ -6448,7 +6448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3edf8cd398734b5d8f4df8af88de97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: '* You feel sick.\n* Why is this still a thing?'
+  lines:
+  - NONO NO NO NO NO
+  - WHY WHWYWHYWHYWHHY
 --- !u!1 &1332896217
 GameObject:
   m_ObjectHideFlags: 0
@@ -7460,7 +7462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 1967914582}
   textComponent: {fileID: 1332896219}
-  text: 
+  text: []
   textSpeed: 0.02
   textStartDelay: 0.1
   isActive: 0
