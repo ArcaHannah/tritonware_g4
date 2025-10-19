@@ -4353,7 +4353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3edf8cd398734b5d8f4df8af88de97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: '* Your bed. \n* Is that mold?'
+  lines:
+  - '* It''s your bed.'
 --- !u!61 &873766765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4792,11 +4793,11 @@ EdgeCollider2D:
   - {x: 2.9717484, y: 1.2612934}
   - {x: 0.59817696, y: 1.3251829}
   - {x: 2.9517403, y: 2.7400978}
-  - {x: -3.03541, y: 2.9386752}
-  - {x: -3.0651283, y: 2.0775797}
-  - {x: -3.0881882, y: -2.9128177}
-  - {x: 3.04288, y: -2.8449712}
-  - {x: 3.0662637, y: 2.7332969}
+  - {x: -3.0964563, y: 2.9264657}
+  - {x: -3.0895472, y: 2.0775797}
+  - {x: -3.1370258, y: -2.9006083}
+  - {x: 3.04288, y: -2.8571806}
+  - {x: 3.090681, y: 2.7455063}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -7464,10 +7465,7 @@ MonoBehaviour:
   textComponent: {fileID: 1332896219}
   text: []
   textSpeed: 0.02
-  textStartDelay: 0.1
-  isActive: 0
-  isComplete: 0
-  isTouching: 0
+  playerMovementScript: {fileID: 0}
 --- !u!114 &1493688566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7573,7 +7571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3edf8cd398734b5d8f4df8af88de97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: '* Your TV.\n* You really need to get this thing fixed...'
+  lines:
+  - '* Your TV.\n* You really need to get this thing fixed.'
 --- !u!1 &1546304341
 GameObject:
   m_ObjectHideFlags: 0
@@ -8863,9 +8862,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 727097522}
-  slotPrefab: {fileID: 6322062635119278105, guid: b62a42c7d5d02e74c924ed80940e2444, type: 3}
-  slotCount: 6
-  itemPrefabs: []
 --- !u!4 &1928198071
 Transform:
   m_ObjectHideFlags: 0
@@ -8967,9 +8963,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2029583595}
   - component: {fileID: 2029583597}
+  - component: {fileID: 2029583598}
   m_Layer: 0
   m_Name: PhotoDrawer
-  m_TagString: Untagged
+  m_TagString: Flavor Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9035,6 +9032,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8633356, y: 1.3340695}
   m_EdgeRadius: 0
+--- !u!114 &2029583598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029583594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3edf8cd398734b5d8f4df8af88de97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - "*  It\u2019s a photo of your mother and you.\\n*  It\u2019s the only one you
+    have. "
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
