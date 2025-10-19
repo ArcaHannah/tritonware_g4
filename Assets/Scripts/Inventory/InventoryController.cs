@@ -3,9 +3,6 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     public GameObject inventoryPanel;
-    /*public GameObject slotPrefab;
-    public int slotCount;
-    public GameObject[] itemPrefabs;*/
 
     /*public static bool hasKeyBedroom = false;
     public static bool hasKeyMRoom = false;
@@ -37,6 +34,18 @@ public class InventoryController : MonoBehaviour
             return true;
         }
         Debug.Log("Cannot add item " + item.name);
+        return false;
+    }
+
+    public bool RemoveItem(GameObject item)
+    {
+        Transform disableItemUI = inventoryPanel.transform.Find(item.name);
+        if (disableItemUI != null)
+        {
+            disableItemUI.gameObject.SetActive(false);
+            return true;
+        }
+        Debug.Log("Cannot remove item " + item.name);
         return false;
     }
 
