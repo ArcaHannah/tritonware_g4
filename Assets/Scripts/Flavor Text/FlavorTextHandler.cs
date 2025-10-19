@@ -1,68 +1,89 @@
 using UnityEngine;
-using TMPro;
 using System.Collections;
-using UnityEditor;
-using System;
-using NUnit.Framework;
 
 public class FlavorTextHandler : MonoBehaviour
 {
+    
     public GameObject dialogueBox;
-    public TextMeshProUGUI textComponent;
-    public string text;
+    public TMPro.TextMeshProUGUI textComponent;
+    public string[] text;
     public float textSpeed;
-    public float textStartDelay;
+    public PlayerMovement playerMovementScript;
 
-    public bool isActive = false; // whether the flavor text is running
-    public bool isComplete = false; // whether the flavor text is completed
-    public bool isTouching = false; // whether the player is touching an interactable object
+    private int index;
+    private bool isTouching = false; // whether the player is touching an interactable object
+    private bool isActive = false; // whether the flavor text is running
+    private bool isTyping = false; // whether the text is being typed
 
     void Start()
     {
-        text = textComponent.text;
+        playerMovementScript = GetComponent<PlayerMovement>(); ;
+        textComponent.text = string.Empty;
         dialogueBox.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!isActive) // prevent spamming E
+        if (isTouching && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (!isActive)
             {
-                if (isTouching)
+
+                if (text == null || text.Length == 0)
                 {
-                    isActive = true;
+                    return;
                 }
 
-                if (isComplete)
+                playerMovementScript.Freeze();
+                dialogueBox.SetActive(true);
+                isActive = true;
+                index = 0;
+
+                // types the first line
+                StartCoroutine(TypeLine());
+            }
+            else
+            {
+                if (isTyping)
                 {
                     StopAllCoroutines();
-                    textComponent.text = "";
-                    dialogueBox.SetActive(false);
-                    isComplete = false;
-                    isActive = false;
+                    textComponent.text = text[index];
+                    isTyping = false;
                 }
-                else if (text != "" && text != null)
+                else
                 {
-                    dialogueBox.SetActive(true);
-                    StartCoroutine(TypeLine());
+                    index++;
+                    if (index < text.Length)
+                    {
+                        // types the next line
+                        textComponent.text = string.Empty;
+                        StartCoroutine(TypeLine());
+                    }
+                    else
+                    {
+                        dialogueBox.SetActive(false);
+                        isActive = false;
+                        index = 0;
+                        playerMovementScript.UnFreeze();
+                    }
                 }
             }
         }
     }
 
+ 
     IEnumerator TypeLine()
     {
-        yield return new WaitForSeconds(textStartDelay);
-        foreach (char c in text.ToCharArray())
+        isTyping = true;
+        textComponent.text = string.Empty;
+
+        foreach (char c in text[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
 
-        isActive = false;
-        isComplete = true;
+        isTyping = false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -71,7 +92,7 @@ public class FlavorTextHandler : MonoBehaviour
         {
             isTouching = true;
             FlavorText ft = collision.gameObject.GetComponent<FlavorText>();
-            text = ft.text;
+            text = ft.lines;
         }
     }
 
@@ -80,7 +101,7 @@ public class FlavorTextHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("Flavor Text"))
         {
             isTouching = false;
-            text = "";
+            textComponent.text = string.Empty;
         }
     }
 }

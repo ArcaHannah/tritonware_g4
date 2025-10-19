@@ -13,27 +13,19 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        rb.angularVelocity = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
         rb.linearVelocity = moveInput * moveSpeed;
-
-        /*if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
-        {
-            moveInput.y = 0;
-        }
-        else
-        {
-            moveInput.x = 0;
-        }*/
     }
-    
+
     public void Move(InputAction.CallbackContext context)
     {
         animator.SetBool("isWalking", true);
-        
+
         if (context.canceled)
         {
             animator.SetBool("isWalking", false);
@@ -43,5 +35,17 @@ public class PlayerMovement : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
         animator.SetFloat("InputX", moveInput.x);
         animator.SetFloat("InputY", moveInput.y);
+    }
+    public Rigidbody2D RB { get { return rb; } }
+
+    public void Freeze()
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+    public void UnFreeze()
+    {
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }

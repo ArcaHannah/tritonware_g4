@@ -2870,7 +2870,6 @@ GameObject:
   m_Component:
   - component: {fileID: 718091279}
   - component: {fileID: 718091278}
-  - component: {fileID: 718091277}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -2878,20 +2877,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &718091277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718091276}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84486817f60b09f4b80760201a444067, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 0}
-  SFXSource: {fileID: 0}
 --- !u!82 &718091278
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5172,7 +5157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3edf8cd398734b5d8f4df8af88de97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: '* You feel sick.\n* Why is this still a thing?'
+  lines:
+  - NONO NO NO NO NO
+  - WHY WHWYWHYWHYWHHY
 --- !u!1 &1332896217
 GameObject:
   m_ObjectHideFlags: 0
@@ -5911,7 +5898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 1967914582}
   textComponent: {fileID: 1332896219}
-  text: 
+  text: []
   textSpeed: 0.02
   textStartDelay: 0.1
   isActive: 0
