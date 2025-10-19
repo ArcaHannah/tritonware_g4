@@ -28,7 +28,7 @@ public class Puzzle1Lock : MonoBehaviour
         slot2.text = "0";
         slot3.text = "0";
         slot4.text = "0";
-        //lockUI.SetActive(false);
+        lockUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,6 +44,11 @@ public class Puzzle1Lock : MonoBehaviour
         {
             PuzzleComplete();
         }
+    }
+
+    public void CloseButton()
+    {
+        lockUI.SetActive(false);
     }
     
     void PuzzleComplete()
