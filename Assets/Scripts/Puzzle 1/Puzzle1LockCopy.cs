@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +24,7 @@ public class Puzzle1LockCopy : MonoBehaviour
         
     }*/
 
-    static Dictionary<int, Color> colors = new Dictionary<int, Color>()
+    /*static Dictionary<int, Color> colors = new Dictionary<int, Color>()
     {
         { 0, red },
         { 1, green },
@@ -77,3 +77,4 @@ public class Puzzle1LockCopy : MonoBehaviour
         colorLock.SetActive(false);
     }
 }
+*/

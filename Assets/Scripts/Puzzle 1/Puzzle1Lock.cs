@@ -16,14 +16,16 @@ public class Puzzle1Lock : MonoBehaviour
 
     public int[] currentCombo = new int[4];
 
-    public int[] correctCombo = new int[4]
-    {
-        1, 2, 2, 5
-    };
+    public int[] correctCombo = new int[4];
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        for (int i = 0; i < correctCombo.Length; i++)
+        {
+            correctCombo[i] = UnityEngine.Random.Range(0, 10);
+            Debug.Log($"Index {i}: {correctCombo[i]}"); // Optional: Log each generated number
+        }
         slot1.text = "0";
         slot2.text = "0";
         slot3.text = "0";
