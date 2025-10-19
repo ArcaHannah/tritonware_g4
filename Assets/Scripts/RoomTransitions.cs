@@ -1,11 +1,20 @@
-using Unity.VisualScripting;
+using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class RoomTransitions : MonoBehaviour
 {
     // the room that this room transition takes you to
     [SerializeField] private Transform nextRoom;
+    [SerializeField] private Collider2D camBoundary;
+    [SerializeField] CinemachineConfiner2D confiner;
+    [SerializeField] private Camera mainCamera;
+
+    void Awake()
+    {
+        confiner = FindFirstObjectByType<CinemachineConfiner2D>();
+        mainCamera = FindFirstObjectByType<Camera>();
+    }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,11 +22,13 @@ public class RoomTransitions : MonoBehaviour
         {
             GameObject player = collision.gameObject;
             TeleportPlayer(player);
+            confiner.BoundingShape2D = camBoundary;
         }
     }
 
     void TeleportPlayer(GameObject player)
     {
         player.transform.position = nextRoom.transform.position;
+        mainCamera.gameObject.transform.position = player.transform.position;
     }
 }
