@@ -34,7 +34,6 @@ private InventoryController inventoryController;
                     // makes reference to the item about to be collected
                     GameObject collectedGameObject = collectibleItemCollider.gameObject;
                     collectibleItemCollider = null; // clears item reference
-
                     Destroy(collectedGameObject);
                 }
             }
