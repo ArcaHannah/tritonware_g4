@@ -3,13 +3,7 @@ using UnityEngine;
 
 public class puzzle1scripttest : MonoBehaviour
 {
-    private static Dictionary<string, int> colorScreens = new Dictionary<string, int>()
-    {
-        {"Red", 1},
-        {"Blue", 4},
-        {"Green", 1},
-        {"Yellow", 3}
-    };
+
     //private bool puzzleActive = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -2541,15 +2541,15 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 8fe29bebe436c6241b789bc1ed73535f, type: 3}
+  m_Resource: {fileID: 8300000, guid: c768779078769ee4caf1a9f2ec7fd1da, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
-  m_Pitch: 0.67
+  m_Volume: 1
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 144
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4357,7 +4357,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockUI: {fileID: 89994624}
-  puzzleComplete: 0
   slot1: {fileID: 426464246}
   slot2: {fileID: 977546332}
   slot3: {fileID: 774851328}

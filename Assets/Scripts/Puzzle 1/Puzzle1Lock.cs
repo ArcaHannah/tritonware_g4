@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using NUnit.Framework;
 
 public class Puzzle1Lock : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class Puzzle1Lock : MonoBehaviour
 
 
     public int[] currentCombo = new int[4];
-
     public int[] correctCombo = new int[4];
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
