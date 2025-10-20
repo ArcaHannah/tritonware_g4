@@ -9,9 +9,16 @@ public class PuzzleInteraction : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isTouching && puzzleUI != null)
+        if (puzzleInfo != null && !puzzleInfo.isComplete)
         {
-            puzzleUI.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E) && isTouching && puzzleUI != null)
+            {
+                puzzleUI.SetActive(true);
+            }
+        }
+        else
+        {
+            puzzleInfo = null; // disable puzzleInfo
         }
     }
 

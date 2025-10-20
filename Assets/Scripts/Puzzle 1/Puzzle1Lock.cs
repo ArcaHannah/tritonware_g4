@@ -14,6 +14,8 @@ public class Puzzle1Lock : MonoBehaviour
     public TMP_Text slot3;
     public TMP_Text slot4;
 
+    PuzzleInfo info;
+
 
     public int[] currentCombo = new int[4];
     public int[] correctCombo = new int[4];
@@ -30,21 +32,25 @@ public class Puzzle1Lock : MonoBehaviour
         slot2.text = "0";
         slot3.text = "0";
         slot4.text = "0";
+        info = GetComponent<PuzzleInfo>();
         lockUI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentCombo[0] = Int32.Parse(slot1.text);
-        currentCombo[1] = Int32.Parse(slot2.text);
-        currentCombo[2] = Int32.Parse(slot3.text);
-        currentCombo[3] = Int32.Parse(slot4.text);
-
-        if (currentCombo[0] == correctCombo[0] && currentCombo[1] == correctCombo[1] &&
-            currentCombo[2] == correctCombo[2] && currentCombo[3] == correctCombo[3])
+        if (!info.isComplete)
         {
-            PuzzleComplete();
+            currentCombo[0] = Int32.Parse(slot1.text);
+            currentCombo[1] = Int32.Parse(slot2.text);
+            currentCombo[2] = Int32.Parse(slot3.text);
+            currentCombo[3] = Int32.Parse(slot4.text);
+
+            if (currentCombo[0] == correctCombo[0] && currentCombo[1] == correctCombo[1] &&
+                currentCombo[2] == correctCombo[2] && currentCombo[3] == correctCombo[3])
+            {
+                PuzzleComplete();
+            }
         }
     }
 
@@ -56,5 +62,6 @@ public class Puzzle1Lock : MonoBehaviour
     void PuzzleComplete()
     {
         lockUI.SetActive(false);
+        SendMessage("SetComplete");
     }
 }
