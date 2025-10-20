@@ -1,3 +1,4 @@
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
@@ -24,28 +25,29 @@ public class InventoryController : MonoBehaviour
     }
 
 
-    public bool AddItem(GameObject item)
+    public bool AddItem(string item)
     {
-        Transform enableItemUI = inventoryPanel.transform.Find(item.name);
+        Transform enableItemUI = inventoryPanel.transform.Find(item);
         //Debug.Log(enableItemUI.name);
         if (enableItemUI != null)
         {
+            Debug.Log("added " + enableItemUI.name);
             enableItemUI.gameObject.SetActive(true);
             return true;
         }
-        Debug.Log("Cannot add item " + item.name);
+        Debug.Log("Cannot add item " + item);
         return false;
     }
 
-    public bool RemoveItem(GameObject item)
+    public bool RemoveItem(string item)
     {
-        Transform disableItemUI = inventoryPanel.transform.Find(item.name);
+        Transform disableItemUI = inventoryPanel.transform.Find(item);
         if (disableItemUI != null)
         {
             disableItemUI.gameObject.SetActive(false);
             return true;
         }
-        Debug.Log("Cannot remove item " + item.name);
+        Debug.Log("Cannot remove item " + item);
         return false;
     }
 

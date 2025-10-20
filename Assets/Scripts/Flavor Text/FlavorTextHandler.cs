@@ -12,7 +12,7 @@ public class FlavorTextHandler : MonoBehaviour
 
     private int index;
     private bool isTouching = false; // whether the player is touching an interactable object
-    private bool isActive = false; // whether the flavor text is running
+    public bool isActive = false; // whether the flavor text is running
     private bool isTyping = false; // whether the text is being typed
 
     void Start()

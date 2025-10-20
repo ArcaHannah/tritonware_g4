@@ -5704,6 +5704,7 @@ MonoBehaviour:
   text: []
   textSpeed: 0.02
   playerMovementScript: {fileID: 0}
+  isActive: 0
 --- !u!114 &1493688566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6273,6 +6274,7 @@ GameObject:
   - component: {fileID: 1602053012}
   - component: {fileID: 1602053011}
   - component: {fileID: 1602053010}
+  - component: {fileID: 1602053014}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -6366,6 +6368,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1602053014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602053009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c7f04be9bca4bb58971166d2f3fa28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 1967914582}
+  textComponent: {fileID: 1332896219}
+  text: []
+  textSpeed: 0
+  playerMovementScript: {fileID: 0}
+  isActive: 0
 --- !u!1 &1618562901
 GameObject:
   m_ObjectHideFlags: 0
@@ -7281,6 +7301,7 @@ GameObject:
   - component: {fileID: 2029583595}
   - component: {fileID: 2029583597}
   - component: {fileID: 2029583598}
+  - component: {fileID: 2029583599}
   m_Layer: 0
   m_Name: PhotoDrawer
   m_TagString: Flavor Text
@@ -7362,8 +7383,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - "*  It\u2019s a photo of your mother and you.\\n*  It\u2019s the only one you
-    have. "
+  - 
+  - 
+  - 
+--- !u!114 &2029583599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029583594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6935d593ea9a50d4eaf4be955097f9e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toAddKey: {fileID: 1928198070}
+  firstDialogueRead: 0
 --- !u!1 &2114278569
 GameObject:
   m_ObjectHideFlags: 0

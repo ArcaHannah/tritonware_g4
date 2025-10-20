@@ -28,7 +28,7 @@ private InventoryController inventoryController;
             // if E is pressed
             if (Input.GetKeyDown(KeyCode.E))
             {
-                bool itemAdded = inventoryController.AddItem(collectibleItemCollider.gameObject);
+                bool itemAdded = inventoryController.AddItem(collectibleItemCollider.gameObject.name);
                 if (itemAdded)
                 {
                     // makes reference to the item about to be collected
