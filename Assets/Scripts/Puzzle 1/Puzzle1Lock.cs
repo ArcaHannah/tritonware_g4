@@ -14,7 +14,7 @@ public class Puzzle1Lock : MonoBehaviour
     public TMP_Text slot3;
     public TMP_Text slot4;
 
-    PuzzleInfo info;
+    public PuzzleInfo info;
 
 
     public int[] currentCombo = new int[4];

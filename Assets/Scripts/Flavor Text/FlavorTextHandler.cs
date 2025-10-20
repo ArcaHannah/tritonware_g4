@@ -24,7 +24,7 @@ public class FlavorTextHandler : MonoBehaviour
 
     void Update()
     {
-        if (isTouching && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)))
+        if (isTouching && Input.GetKeyDown(KeyCode.E))
         {
             if (!isActive)
             {
