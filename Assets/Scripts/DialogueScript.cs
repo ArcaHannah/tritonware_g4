@@ -56,8 +56,8 @@ public class DialogueScript : MonoBehaviour
             }
             else
             {
-                textComponent.color = Color.black;
-                continueText.color = Color.black;
+                textComponent.color = Color.white;
+                continueText.color = Color.white;
             }
             yield return new WaitForSeconds(textSpeed);
         }
