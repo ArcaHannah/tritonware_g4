@@ -27,7 +27,7 @@ public class dialogueDrawerKey : MonoBehaviour
         }
     }*/
 
-    void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if ((updatedDialogue == false) && inventoryController.inventoryPanel.transform.Find("Key") && inventoryController.HasItem("Key"))
         {

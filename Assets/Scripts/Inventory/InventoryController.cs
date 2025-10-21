@@ -12,7 +12,8 @@ public class InventoryController : MonoBehaviour
     public static bool hasKnife = false;
     public static int knifeCount = 0;*/
 
-
+    public int eyeballCount = 0;
+    public int knifeCount = 0;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,10 +32,25 @@ public class InventoryController : MonoBehaviour
         //Debug.Log(enableItemUI.name);
         if (enableItemUI != null)
         {
-            Debug.Log("added " + enableItemUI.name);
-            enableItemUI.gameObject.SetActive(true);
-            return true;
+            if (enableItemUI.gameObject.activeSelf == false)
+            {
+                Debug.Log("added " + enableItemUI.name);
+                enableItemUI.gameObject.SetActive(true);
+                return true;
+            }
+            else
+            {
+                if (item == "Knife")
+                {
+                    knifeCount++;
+                }
+                if (item == "Eyeball")
+                {
+                    eyeballCount++;
+                }
+            }
         }
+
         Debug.Log("Cannot add item " + item);
         return false;
     }

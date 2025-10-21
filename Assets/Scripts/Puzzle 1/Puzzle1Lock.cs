@@ -3,6 +3,8 @@ using UnityEngine;
 using TMPro;
 using System;
 using NUnit.Framework;
+using Unity.VisualScripting;
+using System.Collections;
 
 public class Puzzle1Lock : MonoBehaviour
 {
@@ -15,6 +17,10 @@ public class Puzzle1Lock : MonoBehaviour
     public TMP_Text slot4;
 
     public PuzzleInfo info;
+    public InventoryController inventoryController;
+    public FlavorText ft;
+    private bool hasKey = false;
+    private bool bedroomEyeball = false;
 
 
     public int[] currentCombo = new int[4];
@@ -34,6 +40,9 @@ public class Puzzle1Lock : MonoBehaviour
         slot4.text = "0";
         info = GetComponent<PuzzleInfo>();
         lockUI.SetActive(false);
+        ft = this.GetComponent<FlavorText>();
+        ft.lines[0] = "* You heard a clicking noise, but the lock's not budging.";
+        ft.lines[1] = "* Turning the lock in your hand reveals a keyhole.";
     }
 
     // Update is called once per frame
@@ -52,16 +61,73 @@ public class Puzzle1Lock : MonoBehaviour
                 PuzzleComplete();
             }
         }
+        else if (hasKey == false && inventoryController.HasItem("Key"))
+        {
+            transform.Find("Eyeball").gameObject.SetActive(true);
+            ft.lines[0] = "* The lock unlatches, and you open the drawer.\n* Something unsickly writhes at the bottom.";
+            ft.lines[1] = "* The eyeball flails in your hand, the pupil scanning the room in a frenzy.";
+            hasKey = true; // this boolean is so that this else if block only runs once when the player has key
+        }
+        else if (bedroomEyeball == false && inventoryController.HasItem("Eyeball"))
+        {
+            inventoryController.RemoveItem("Key");
+            bedroomEyeball = true;
+        }
+        
     }
 
     public void CloseButton()
     {
         lockUI.SetActive(false);
     }
-    
+
     void PuzzleComplete()
     {
         lockUI.SetActive(false);
+        tag = "Flavor Text";
+        if (inventoryController.HasItem("Key") == false)
+        {
+            Debug.Log("YOU DO NOT HAVE THE KEY..");
+            GetComponent<FlavorText>().enabled = true;
+        }
+        else //OK I KNOW THIS IS SPAGHETTI CODE BUT IVE BEEN WORKING ON THIS PUZZLE FOR LIKE 3 DAYS
+        {
+            inventoryController.RemoveItem("Key");
+            transform.Find("Eyeball").gameObject.SetActive(true);
+            ft.lines[0] = "* The lock unlatches, and you open the drawer.\n* Something unsickly writhes at the bottom.";
+            ft.lines[1] = "* The eyeball flails in your hand, the pupil scanning the room in a frenzy.";
+            hasKey = true; // this boolean is so that this else if block only runs once when the player has key
+        }
         SendMessage("SetComplete");
+        info.isComplete = true;
     }
+
+
+    /*void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (lockComplete == true)
+        {
+            if (inventoryController.HasItem("Key") && inventoryController.HasItem("Eyeball") && eyeballDialogueFinished == false)
+            {
+                inventoryController.RemoveItem("Key");
+                
+                eyeballDialogueFinished = true;
+            }
+            else if (eyeballDialogueFinished)
+            {
+                //ft.lines[0] = "* Ants march along the inside of the drawer from the open snack bags and food containers.";
+                //ft.lines[1] = "* You try to recall the last thing you ate.";
+                ft.lines[0] = null;
+                ft.lines[1] = null;
+                GetComponent<FlavorText>().enabled = false;
+            }
+        }
+    }*/
+
+    /*void OnCollisionExit2D(Collision2D collision)
+    {
+        ft.lines[0] = "";
+        ft.lines[1] = "";
+    }*/
+
 }

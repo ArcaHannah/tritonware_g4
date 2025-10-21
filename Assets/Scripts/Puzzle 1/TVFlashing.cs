@@ -8,6 +8,8 @@ public class puzzle1scripttest : MonoBehaviour
     Puzzle1Lock Puzzle1Code;
     public GameObject tvScreen;
     int[] code;
+    public FlavorText ft;
+    private bool turnOffTV = false;
 
     void Start()
     {
@@ -19,7 +21,7 @@ public class puzzle1scripttest : MonoBehaviour
 
     void Update()
     {
-        if (Puzzle1Code.info.isComplete == true)
+        if (Puzzle1Code.info.isComplete == true && turnOffTV == false)
         {
             StopAllCoroutines();
             // ensure all screens are off
@@ -27,6 +29,8 @@ public class puzzle1scripttest : MonoBehaviour
             {
                 child.gameObject.SetActive(false);
             }
+            turnOffTV = true;
+            ft.lines[0] = "* The TV is unplugged.";
         }
     }
 

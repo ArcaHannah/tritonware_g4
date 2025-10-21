@@ -4583,6 +4583,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122533567}
   m_CullTransparentMesh: 1
+--- !u!1 &1151271772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1151271773}
+  - component: {fileID: 1151271774}
+  m_Layer: 0
+  m_Name: Eyeball
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1151271773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151271772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1739039100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1151271774
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151271772}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -2.171453, y: 1.3818333}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.4251795, y: 0.93926}
+  m_EdgeRadius: 0
 --- !u!1 &1207233711
 GameObject:
   m_ObjectHideFlags: 0
@@ -5608,9 +5686,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1493688559
 SpriteRenderer:
@@ -6475,7 +6553,7 @@ MonoBehaviour:
   textComponent: {fileID: 1332896219}
   text: []
   textSpeed: 0
-  playerMovementScript: {fileID: 0}
+  playerMovementScript: {fileID: 1493688556}
   isActive: 0
 --- !u!1 &1618562901
 GameObject:
@@ -6655,6 +6733,7 @@ GameObject:
   - component: {fileID: 1739039102}
   - component: {fileID: 1739039103}
   - component: {fileID: 1739039104}
+  - component: {fileID: 1739039105}
   m_Layer: 0
   m_Name: Drawer
   m_TagString: Puzzle
@@ -6674,7 +6753,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1151271773}
   m_Father: {fileID: 1902435744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1739039101
@@ -6754,7 +6834,9 @@ MonoBehaviour:
   slot2: {fileID: 977546332}
   slot3: {fileID: 774851328}
   slot4: {fileID: 212748728}
-  info: {fileID: 0}
+  info: {fileID: 1739039102}
+  inventoryController: {fileID: 1928198070}
+  ft: {fileID: 1739039105}
   currentCombo: 00000000000000000000000000000000
   correctCombo: 00000000000000000000000000000000
 --- !u!114 &1739039104
@@ -6770,6 +6852,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tvScreen: {fileID: 1540246596}
+  ft: {fileID: 1540246599}
+--- !u!114 &1739039105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739039099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3edf8cd398734b5d8f4df8af88de97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - 
+  - 
 --- !u!1 &1762395908
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,6 +7388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 706423141}
+  eyeballCount: 0
+  knifeCount: 0
 --- !u!4 &1928198071
 Transform:
   m_ObjectHideFlags: 0
