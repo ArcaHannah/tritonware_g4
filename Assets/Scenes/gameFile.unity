@@ -3446,7 +3446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - '* It''s your bed.'
+  - '* It''s your bed.\n* You missed sleeping here.'
 --- !u!61 &873766765
 BoxCollider2D:
   m_ObjectHideFlags: 0
