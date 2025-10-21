@@ -71,7 +71,6 @@ public class FlavorTextHandler : MonoBehaviour
         }
     }
 
- 
     IEnumerator TypeLine()
     {
         isTyping = true;
