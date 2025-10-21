@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class DialogueScript : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI continueText;
     public string[] lines;
     public float textSpeed;
+    public Texture2D[] backgrounds;
 
     private int index;
 
@@ -47,6 +49,16 @@ public class DialogueScript : MonoBehaviour
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
+            if (index % 2 != 0)
+            {
+                textComponent.color = Color.red;
+                continueText.color = Color.red;
+            }
+            else
+            {
+                textComponent.color = Color.black;
+                continueText.color = Color.black;
+            }
             yield return new WaitForSeconds(textSpeed);
         }
     }
