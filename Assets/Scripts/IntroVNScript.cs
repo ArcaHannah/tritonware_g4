@@ -4,9 +4,10 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class DialogueScript : MonoBehaviour
+public class IntroVNScript : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI continueText;
     public string[] lines;
     public float textSpeed;
 
@@ -47,6 +48,16 @@ public class DialogueScript : MonoBehaviour
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
+            if (index % 2 != 0)
+            {
+                textComponent.color = Color.red;
+                continueText.color = Color.red;
+            }
+            else
+            {
+                textComponent.color = Color.white;
+                continueText.color = Color.white;
+            }
             yield return new WaitForSeconds(textSpeed);
         }
     }
