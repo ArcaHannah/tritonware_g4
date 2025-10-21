@@ -15,7 +15,6 @@ public class dialogueDrawerKey : MonoBehaviour
     {
         updatedDialogue = false;
         ft = this.GetComponent<FlavorText>();
-        ft.lines[0] = "* You open the bedroom drawer.\n* A rusted key pokes out from underneath the cloth.";
     }
 
     /*void Update()

@@ -7492,6 +7492,7 @@ GameObject:
   - component: {fileID: 2029583595}
   - component: {fileID: 2029583597}
   - component: {fileID: 2029583598}
+  - component: {fileID: 2029583599}
   m_Layer: 0
   m_Name: PhotoDrawer
   m_TagString: Flavor Text
@@ -7574,7 +7575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - 
+  - '* You open the bedroom drawer.\n* A rusted key pokes out from underneath the
+    cloth.'
 --- !u!114 &2029583599
 MonoBehaviour:
   m_ObjectHideFlags: 0
