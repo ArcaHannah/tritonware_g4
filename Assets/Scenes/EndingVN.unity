@@ -917,7 +917,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 814305586}
   background1: {fileID: 862611921}
-  background2: {fileID: 2055759151}
   background3: {fileID: 2092343026}
   background4: {fileID: 1948279749}
   mcCG: {fileID: 1753221359}
@@ -931,7 +930,6 @@ MonoBehaviour:
   - '*panting*\n* finally...'
   - '* don''t try to hide - i got you now.'
   - '* ...do you really?'
-  - 
   - 
   - 
   - 
@@ -1667,7 +1665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2055759152
 RectTransform:
   m_ObjectHideFlags: 0

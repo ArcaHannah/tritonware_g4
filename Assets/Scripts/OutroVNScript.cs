@@ -10,7 +10,7 @@ public class OutroVNScript : MonoBehaviour
 {
     public GameObject dialogueBox;
     public GameObject background1;
-    public GameObject background2;
+    //public GameObject background2;
     public GameObject background3;
     public GameObject background4;
 
@@ -25,14 +25,14 @@ public class OutroVNScript : MonoBehaviour
     public string[] lines;
     public float textSpeed;
 
-    private int index;
+    public int index;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textComponent.text = string.Empty;
         background1.SetActive(true);
-        background2.SetActive(false);
+        //background2.SetActive(false);
         background3.SetActive(false);
         background4.SetActive(false);
 
@@ -107,17 +107,17 @@ public class OutroVNScript : MonoBehaviour
         if (index == 3)
         {
             background1.SetActive(false);
-            background2.SetActive(true);
+            background3.SetActive(true);
 
             continueText.gameObject.SetActive(false);
             dialogueBox.SetActive(false);
-        }
+        }/*
         else if (index == 4)
         {
             background2.SetActive(false);
             background3.SetActive(true);
-        }
-        else if (index == 5)
+        }*/
+        else if (index == 4)
         {
             background3.SetActive(false);
             background4.SetActive(true);
@@ -143,12 +143,12 @@ public class OutroVNScript : MonoBehaviour
             case 3:
                 shadowCG.SetActive(false);
                 break;
-            case 6:
+            case 5:
                 mcCG.SetActive(true);
                 shadowCG.SetActive(true);
                 StartCoroutine(PlotTwist());
                 break;
-            case 8:
+            case 7:
                 mcCG.SetActive(false);
                 break;
         }
