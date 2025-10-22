@@ -658,7 +658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 52}
+  m_AnchoredPosition: {x: 475, y: 52}
   m_SizeDelta: {x: -1409.6409, y: -382.4142}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89994626
@@ -2646,6 +2646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37aae6a8a1940b741a7869bec5c94c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 0}
+  knifeCount: 0
   counterText: {fileID: 420194777}
   inventoryController: {fileID: 1928198070}
 --- !u!114 &420194777
@@ -5984,9 +5986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ede9f1900a5380489da41deb92eeef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 706423141}
-  eyeballCount: 0
-  knifeCount: 0
   inventoryController: {fileID: 1928198070}
   ft: {fileID: 862757194}
 --- !u!1 &864356985
@@ -8132,9 +8131,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1739039103}
+      - m_Target: {fileID: 1738566603}
         m_TargetAssemblyTypeName: Puzzle1Lock, Assembly-CSharp
-        m_MethodName: CloseButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10564,7 +10563,7 @@ GameObject:
   - component: {fileID: 1704094447}
   - component: {fileID: 1704094446}
   m_Layer: 5
-  m_Name: BedroomDownButton3
+  m_Name: StudyDownButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11697,7 +11696,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 706423141}
-  eyeballCount: 0
   knifeCount: 0
 --- !u!4 &1928198071
 Transform:
@@ -12294,7 +12292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6935d593ea9a50d4eaf4be955097f9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryController: {fileID: 1928198070}
+  bedroomDrawer: {fileID: 1739039099}
   updatedDialogue: 0
 --- !u!1 &2050355617
 GameObject:

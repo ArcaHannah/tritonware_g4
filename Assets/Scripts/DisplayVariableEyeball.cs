@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class DisplayVariableEyeball : MonoBehaviour
+public class DisplayVariableEyeball : InventoryController
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    public TMP_Text counterText;
@@ -9,9 +9,9 @@ public class DisplayVariableEyeball : MonoBehaviour
 
    public void Update()
     {
-        if (inventoryController.eyeballCount > 1)
+        if (eyeballCount > 1)
         {
-            counterText.text = inventoryController.eyeballCount.ToString();
+            counterText.text = eyeballCount.ToString();
         }
    }
 }

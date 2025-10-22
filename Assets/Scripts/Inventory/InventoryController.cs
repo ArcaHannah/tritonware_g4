@@ -1,6 +1,7 @@
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
+
 public class InventoryController : MonoBehaviour
 {
     public GameObject inventoryPanel;
@@ -13,7 +14,7 @@ public class InventoryController : MonoBehaviour
     public static bool hasKnife = false;
     public static int knifeCount = 0;*/
 
-    public int eyeballCount = 0;
+    public static int eyeballCount = 0;
     public int knifeCount = 0;
 
 
@@ -39,17 +40,17 @@ public class InventoryController : MonoBehaviour
                 enableItemUI.gameObject.SetActive(true);
             }
 
-                if (item == "Knife")
-                {
-                    knifeCount++;
-                    Debug.Log("added one more " + enableItemUI.name + " (" + knifeCount + ")");
-                }
-                if (item == "Eyeball")
-                {
-                    eyeballCount++;
-                    Debug.Log("added one more " + enableItemUI.name + " (" + eyeballCount + ")");
-                }
-            
+            if (item == "Knife")
+            {
+                knifeCount++;
+                Debug.Log("added one more " + enableItemUI.name + " (" + knifeCount + ")");
+            }
+            if (item == "Eyeball")
+            {
+                eyeballCount++;
+                Debug.Log("added one more " + enableItemUI.name + " (" + eyeballCount + ")");
+            }
+
             return true;
         }
 

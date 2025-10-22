@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class dialogueDrawerKey : MonoBehaviour
 {
-    //GameObject bedroomDrawer;
-    FlavorText ft;
-    public InventoryController inventoryController;
+    public GameObject bedroomDrawer;
+    FlavorText ftDrawer;
+    //public InventoryController inventoryController;
     //public FlavorTextHandler handlerCheck;
     //public GameObject dialogueBox;
     public bool updatedDialogue;
@@ -14,7 +14,7 @@ public class dialogueDrawerKey : MonoBehaviour
     void Start()
     {
         updatedDialogue = false;
-        ft = this.GetComponent<FlavorText>();
+        ftDrawer = this.GetComponent<FlavorText>();
     }
 
     /*void Update()
@@ -28,9 +28,9 @@ public class dialogueDrawerKey : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((updatedDialogue == false) && inventoryController.inventoryPanel.transform.Find("Key") && inventoryController.HasItem("Key"))
+        if ((updatedDialogue == false) && bedroomDrawer.GetComponent<InventoryController>().HasItem("Key"))
         {
-            ft.lines[0] = "* It's a photo of your mother and you.\n* It's the only one you have.";
+            ftDrawer.lines[0] = "* It's a photo of your mother and you.\n* It's the only one you have.";
             updatedDialogue = true;
         }
     }

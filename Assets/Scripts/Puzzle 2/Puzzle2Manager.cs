@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class puzzle2scripttest : InventoryController
+public class puzzle2scripttest : MonoBehaviour
 {
 
     // true number of knives player has to collect for the puzzle
@@ -25,20 +25,20 @@ public class puzzle2scripttest : InventoryController
         if ((isComplete == false) && (collectibleItemCollider != null))
         {
             // if E is pressed
-            if (Input.GetKeyDown(KeyCode.E) && HasItem("Knife"))
+            if (Input.GetKeyDown(KeyCode.E) && inventoryController.HasItem("Knife"))
             {
                 Debug.Log("We are actually here");
-                if (inventoryPanel.transform.Find("Knife").gameObject.activeSelf == true)
+                if (inventoryController.inventoryPanel.transform.Find("Knife").gameObject.activeSelf == true)
                 {
-                    RemoveItem("Knife");
+                    inventoryController.RemoveItem("Knife");
                 }
             }
-            if (stopUpdatingKnives == true && HasItem("Eyeball"))
+            if (stopUpdatingKnives == true && inventoryController.HasItem("Eyeball"))
             {
                 isComplete = true;
-                if (inventoryPanel.transform.Find("Knife").gameObject.activeSelf == true)
+                if (inventoryController.inventoryPanel.transform.Find("Knife").gameObject.activeSelf == true)
                 {
-                    RemoveItem("Knife");
+                    inventoryController.RemoveItem("Knife");
                 }
             }
         }
@@ -46,7 +46,7 @@ public class puzzle2scripttest : InventoryController
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (stopUpdatingKnives == false && knifeCount == knivesTotal)
+        if (stopUpdatingKnives == false && inventoryController.knifeCount == knivesTotal)
         {
             transform.Find("Eyeball").gameObject.SetActive(true);
             stopUpdatingKnives = true;
@@ -54,7 +54,7 @@ public class puzzle2scripttest : InventoryController
         }
         if (stopUpdatingKnives == false && isComplete == false && inventoryController.HasItem("Knife"))
         {
-            ft.lines[0] = "There are " + (knivesTotal - knifeCount + 1) + " empty slots in the knife block.";
+            ft.lines[0] = "There are " + (knivesTotal - inventoryController.knifeCount + 1) + " empty slots in the knife block.";
         }
         collectibleItemCollider = collision.collider;
     }
