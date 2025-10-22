@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class hubChange : InventoryController
+public class hubChange : MonoBehaviour
 {
     public bool hubPhaseTwo = false;
     public GameObject unveiledHubRef;
@@ -13,7 +13,7 @@ public class hubChange : InventoryController
     // Update is called once per frame
     void Update()
     {
-        if ((hubPhaseTwo == false) && eyeballCount == 3)
+        if ((hubPhaseTwo == false) && InventoryController.eyeballCount == 3)
         {
             unveiledHubRef.SetActive(true);
             this.gameObject.SetActive(false);

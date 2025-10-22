@@ -17,7 +17,7 @@ public class puzzle2scripttest : MonoBehaviour
     void Start()
     {
         ft = this.GetComponent<FlavorText>();
-        ft.lines[0] = "There are " + (knivesTotal + 1) + " empty slots in the knife block.";
+        ft.lines[0] = "* There are " + (knivesTotal + 1) + " empty slots in the knife block.";
     }
 
     void Update()
@@ -27,7 +27,6 @@ public class puzzle2scripttest : MonoBehaviour
             // if E is pressed
             if (Input.GetKeyDown(KeyCode.E) && inventoryController.HasItem("Knife"))
             {
-                Debug.Log("We are actually here");
                 if (inventoryController.inventoryPanel.transform.Find("Knife").gameObject.activeSelf == true)
                 {
                     inventoryController.RemoveItem("Knife");
@@ -40,6 +39,7 @@ public class puzzle2scripttest : MonoBehaviour
                 {
                     inventoryController.RemoveItem("Knife");
                 }
+                ft.lines[0] = "* There's still one knife missing from the block.";
             }
         }
     }
@@ -50,11 +50,11 @@ public class puzzle2scripttest : MonoBehaviour
         {
             transform.Find("Eyeball").gameObject.SetActive(true);
             stopUpdatingKnives = true;
-            ft.lines[0] = "* You catch a glimpse of something behind the knife block.\n* You move it, and find an severed eyeball staring straight at you.";
+            ft.lines[0] = "* Something behind the knife block catches your eye.\n* A severed eyeball is staring straight at you.";
         }
         if (stopUpdatingKnives == false && isComplete == false && inventoryController.HasItem("Knife"))
         {
-            ft.lines[0] = "There are " + (knivesTotal - inventoryController.knifeCount + 1) + " empty slots in the knife block.";
+            ft.lines[0] = "* There are " + (knivesTotal - inventoryController.knifeCount + 1) + " empty slots in the knife block.";
         }
         collectibleItemCollider = collision.collider;
     }
