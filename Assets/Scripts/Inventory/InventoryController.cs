@@ -72,10 +72,8 @@ public class InventoryController : MonoBehaviour
         Transform itemTransform = inventoryPanel.transform.Find(item);
         if (itemTransform != null && itemTransform.gameObject.activeSelf)
         {
-            Debug.Log("YEAH WE FOUND " + item);
             return true;
         }
-        Debug.Log("THERE IS NO " + item);
         return false;
     }
 

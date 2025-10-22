@@ -87,7 +87,6 @@ public class Puzzle1Lock : MonoBehaviour
         tag = "Flavor Text";
         if (inventoryController.HasItem("Key") == false)
         {
-            Debug.Log("YOU DO NOT HAVE THE KEY..");
             GetComponent<FlavorText>().enabled = true;
         }
         else //OK I KNOW THIS IS SPAGHETTI CODE BUT IVE BEEN WORKING ON THIS PUZZLE FOR LIKE 3 DAYS

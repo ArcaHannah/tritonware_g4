@@ -5640,8 +5640,8 @@ MonoBehaviour:
   inventoryPanel: {fileID: 1928198069}
   eyeballCount: 0
   knifeCount: 0
-  inventoryController: {fileID: 0}
-  ft: {fileID: 0}
+  inventoryController: {fileID: 1928198070}
+  ft: {fileID: 862757194}
 --- !u!1 &864356985
 GameObject:
   m_ObjectHideFlags: 0
