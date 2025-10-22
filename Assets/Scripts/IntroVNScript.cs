@@ -11,12 +11,16 @@ public class IntroVNScript : MonoBehaviour
     public string[] lines;
     public float textSpeed;
 
+    public GameObject mcCG;
+    public GameObject shadowCG;
+
     private int index;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textComponent.text = string.Empty;
+        shadowCG.SetActive(false);
         StartDialogue();
     }
 
@@ -61,19 +65,34 @@ public class IntroVNScript : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
     }
-    
-    void NextLine ()
+
+    void NextLine()
     {
         if (index < lines.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;
+            UpdateCG();
             StartCoroutine(TypeLine());
         }
         else
         {
             gameObject.SetActive(false);
             SceneManager.LoadScene("gameFile");
+        }
+    }
+    
+    void UpdateCG()
+    {
+        if (index % 2 == 0)
+        {
+            mcCG.SetActive(true);
+            shadowCG.SetActive(false);
+        }
+        else
+        {
+            mcCG.SetActive(false);
+            shadowCG.SetActive(true);
         }
     }
 }

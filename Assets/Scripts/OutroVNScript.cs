@@ -3,6 +3,8 @@ using TMPro;
 using System.Collections;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using Unity.XR.OpenVR;
+using System;
 
 public class OutroVNScript : MonoBehaviour
 {
@@ -11,6 +13,12 @@ public class OutroVNScript : MonoBehaviour
     public GameObject background2;
     public GameObject background3;
     public GameObject background4;
+
+    public GameObject mcCG;
+    public GameObject shadowCG;
+    public int moveDistance;
+    public int moveIterations;
+    public float moveDelay;
     
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI continueText;
@@ -27,6 +35,8 @@ public class OutroVNScript : MonoBehaviour
         background2.SetActive(false);
         background3.SetActive(false);
         background4.SetActive(false);
+
+        shadowCG.SetActive(false);
 
         StartDialogue();
     }
@@ -81,6 +91,7 @@ public class OutroVNScript : MonoBehaviour
             index++;
             textComponent.text = string.Empty;
             UpdateBackground();
+            UpdateCG();
             StartCoroutine(TypeLine());
         }
         else
@@ -116,5 +127,41 @@ public class OutroVNScript : MonoBehaviour
             dialogueBox.SetActive(true);
             continueText.gameObject.SetActive(true);
         }
+    }
+
+    void UpdateCG()
+    {
+        switch (index)
+        {
+            case 0:
+                shadowCG.SetActive(false);
+                break;
+            case 2:
+                mcCG.SetActive(false);
+                shadowCG.SetActive(true);
+                break;
+            case 3:
+                shadowCG.SetActive(false);
+                break;
+            case 6:
+                mcCG.SetActive(true);
+                shadowCG.SetActive(true);
+                StartCoroutine(PlotTwist());
+                break;
+            case 8:
+                mcCG.SetActive(false);
+                break;
+        }
+    }
+
+    IEnumerator PlotTwist()
+    {
+        for (int i = 0; i < moveIterations; i++)
+        {
+            shadowCG.transform.position += new Vector3(-moveDistance, 0, 0);
+            yield return new WaitForSeconds(moveDelay);
+        }
+
+        shadowCG.SetActive(false);
     }
 }
