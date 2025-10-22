@@ -8131,9 +8131,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1738566603}
-        m_TargetAssemblyTypeName: Puzzle1Lock, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1738566606}
+        m_TargetAssemblyTypeName: Puzzle3Lock, Assembly-CSharp
+        m_MethodName: CloseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
