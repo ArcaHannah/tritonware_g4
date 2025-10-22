@@ -68,7 +68,7 @@ public class Puzzle1Lock : MonoBehaviour
             ft.lines[1] = "* The eyeball flails in your hand, the pupil scanning the room in a frenzy.";
             hasKey = true; // this boolean is so that this else if block only runs once when the player has key
         }
-        if (bedroomEyeball == false && inventoryController.HasItem("Eyeball"))
+        if (bedroomEyeball == false && hasKey == true && inventoryController.HasItem("Eyeball"))
         {
             inventoryController.RemoveItem("Key");
             bedroomEyeball = true;

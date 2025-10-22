@@ -4,6 +4,7 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     public GameObject inventoryPanel;
+    //public GameObject puzzle2updater;
 
     /*public static bool hasKeyBedroom = false;
     public static bool hasKeyMRoom = false;
@@ -36,35 +37,37 @@ public class InventoryController : MonoBehaviour
             {
                 Debug.Log("added " + enableItemUI.name);
                 enableItemUI.gameObject.SetActive(true);
-                return true;
             }
-            else
-            {
+
                 if (item == "Knife")
                 {
                     knifeCount++;
+                    Debug.Log("added one more " + enableItemUI.name + " (" + knifeCount + ")");
                 }
                 if (item == "Eyeball")
                 {
                     eyeballCount++;
+                    Debug.Log("added one more " + enableItemUI.name + " (" + eyeballCount + ")");
                 }
-            }
+            
+            return true;
         }
 
         Debug.Log("Cannot add item " + item);
         return false;
     }
 
-    public bool RemoveItem(string item)
+    public void RemoveItem(string item)
     {
         Transform disableItemUI = inventoryPanel.transform.Find(item);
         if (disableItemUI != null)
         {
+            Debug.Log("Removed " + item);
             disableItemUI.gameObject.SetActive(false);
-            return true;
+            //return true;
         }
         Debug.Log("Cannot remove item " + item);
-        return false;
+        //return false;
     }
 
     public bool HasItem(string item)
