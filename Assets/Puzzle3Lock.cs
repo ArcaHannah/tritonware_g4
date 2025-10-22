@@ -50,7 +50,7 @@ public class Puzzle3Lock : MonoBehaviour
             
         }
     }
-    
+
     void PuzzleComplete()
     {
         lockUI.SetActive(false);
@@ -58,5 +58,10 @@ public class Puzzle3Lock : MonoBehaviour
         GetComponent<FlavorText>().enabled = true;
         SendMessage("SetComplete");
         info.isComplete = true;
+    }
+    
+    public void CloseButton()
+    {
+        lockUI.SetActive(false);
     }
 }
