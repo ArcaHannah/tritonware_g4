@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: b6bf5ad9d830f124db8b7180e238fdb7
+guid: e717fa4e74eab1849a2f7f76675a9926
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6861118872879091838
-    second: toy-knife-undertale_0
+      213: -3624471952128081399
+    second: puzzle3lock_0
+  - first:
+      213: -9002473652409273730
+    second: puzzle3lock_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toy-knife-undertale_0
+      name: puzzle3lock_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 13
+        x: 25
+        y: 105
+        width: 941
+        height: 1023
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28f2054acb868c0a0800000000000000
-      internalID: -6861118872879091838
+      spriteID: 9020a0b76f943bdc0800000000000000
+      internalID: -3624471952128081399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: puzzle3lock_1
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 10
+        width: 25
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72f45809e9c01380800000000000000
+      internalID: -9002473652409273730
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      toy-knife-undertale_0: -6861118872879091838
+      puzzle3lock_0: -3624471952128081399
+      puzzle3lock_1: -9002473652409273730
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

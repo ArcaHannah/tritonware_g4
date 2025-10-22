@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerItemCollector : MonoBehaviour
 {
-private InventoryController inventoryController;
-    private Collider2D collectibleItemCollider = null;
+    private InventoryController inventoryController;
+    public Collider2D collectibleItemCollider = null;
 
     //[SerializeField]
     //private GameObject interactionMessage;
