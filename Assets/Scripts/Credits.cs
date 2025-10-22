@@ -1,9 +1,9 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Credits : MonoBehaviour
 {
-    bool haveCreditsStarted = false;
     public GameObject credits;
     public GameObject thankYou;
     public GameObject mainMenuButton;
@@ -16,24 +16,40 @@ public class Credits : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (haveCreditsStarted)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
             {
-                credits.SetActive(false);
-                thankYou.SetActive(true);
-                mainMenuButton.SetActive(true);
                 haveCreditsStarted = false;
+                wereCreditsSeen = true;
             }
         }
-    }
-    
+        else if (wereCreditsSeen)
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
+            {
+                
+                wereCreditsSeen = false;
+                Debug.Log("credits ended");
+            }
+        }
+    }*/
+
     void StartCredits()
     {
-        haveCreditsStarted = true;
         credits.SetActive(true);
+        StartCoroutine(RollCredits());
+    }
+
+    IEnumerator RollCredits()
+    {
+        yield return new WaitForSeconds(3);
+
+        credits.SetActive(false);
+        thankYou.SetActive(true);
+        mainMenuButton.SetActive(true);
     }
 
     public void BackToMenu()
