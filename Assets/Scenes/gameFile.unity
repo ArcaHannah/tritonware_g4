@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - '* '
+  - '* This lamp post is taller than you.\n* You feel insecure.'
 --- !u!61 &144072808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1451,6 +1451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - '* One of the burners is colored in with a red crayon.'
+  - '* To the right of it, a knife had been embedded within the meat..'
 --- !u!61 &228599951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2196,7 +2197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3525,7 +3526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &492140606
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3533,7 +3534,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492140605}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3553,7 +3554,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 52}
-  m_SizeDelta: {x: -1409.6409, y: -382.4142}
+  m_SizeDelta: {x: -1409.641, y: -382.41418}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492140607
 MonoBehaviour:
@@ -4434,6 +4435,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660763553}
   m_CullTransparentMesh: 1
+--- !u!1 &674331002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674331003}
+  - component: {fileID: 674331004}
+  - component: {fileID: 674331005}
+  m_Layer: 0
+  m_Name: beer fetching
+  m_TagString: Flavor Text
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &674331003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674331002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 727099906}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674331004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674331002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3edf8cd398734b5d8f4df8af88de97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - '* This corner smells worse than the mold.'
+--- !u!61 &674331005
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674331002}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -3.3403852, y: -4.073457}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.5114856, y: 1.4685574}
+  m_EdgeRadius: 0
 --- !u!1 &692726795
 GameObject:
   m_ObjectHideFlags: 0
@@ -4972,6 +5066,7 @@ Transform:
   - {fileID: 1465824981}
   - {fileID: 2134776809}
   - {fileID: 32744770}
+  - {fileID: 674331003}
   m_Father: {fileID: 49084665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &770525322
@@ -5940,8 +6035,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - '* Rotting, rotting, rotting, rotting, rotting, rotting, rotting, rotting, rotting,
-    rotting, rotting, rotting, rotting'
+  - '* There''s an ecosystem of bugs feasting on whatever''s left rotting here.'
+  - '* You try to remember the last time you ate.'
 --- !u!61 &864356988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6822,7 +6917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.6313726, g: 0.6156863, b: 0.5764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6864,8 +6959,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -35}
-  m_SizeDelta: {x: 130, y: 90}
+  m_AnchoredPosition: {x: 59.1479, y: -31.708}
+  m_SizeDelta: {x: 84.2959, y: 147.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1036653306
 GameObject:
@@ -8166,7 +8261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.6313726, g: 0.6156863, b: 0.5764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8208,8 +8303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: -35}
-  m_SizeDelta: {x: 130, y: 90}
+  m_AnchoredPosition: {x: 144.94626, y: -31.707}
+  m_SizeDelta: {x: 83.7105, y: 147.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1312634205
 GameObject:
@@ -10367,8 +10462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - '*This carcass has a wound in it.\n* You try not to touch the entrails as you
-    pull the knife out.'
+  - '*This carcass has a wound in it.\n* You try not to touch it as you pulled out
+    the knife within.'
 --- !u!1 &1695522522
 GameObject:
   m_ObjectHideFlags: 0
@@ -10598,9 +10693,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1738566604}
   - component: {fileID: 1738566605}
+  - component: {fileID: 1738566606}
+  - component: {fileID: 1738566608}
+  - component: {fileID: 1738566607}
   m_Layer: 0
   m_Name: Clock
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10666,6 +10764,56 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.304366, y: 0.8173809}
   m_EdgeRadius: 0
+--- !u!114 &1738566606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738566603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2bb91d977aaea349ae27cb8e0d0c599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockUI: {fileID: 492140605}
+  slot1: {fileID: 445169142}
+  slot2: {fileID: 72164252}
+  slot3: {fileID: 1863586031}
+  info: {fileID: 1738566608}
+  inventoryController: {fileID: 1928198070}
+  ft: {fileID: 1738566607}
+  currentCombo: 000000000000000000000000
+  correctCombo: 020000000200000005000000
+--- !u!114 &1738566607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738566603}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3edf8cd398734b5d8f4df8af88de97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - 
+  - 
+--- !u!114 &1738566608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738566603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ff6bbec756a409f8eaf61cd1c61894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleUI: {fileID: 492140605}
+  isComplete: 0
 --- !u!1 &1739039099
 GameObject:
   m_ObjectHideFlags: 0
@@ -11611,7 +11759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.6313726, g: 0.6156863, b: 0.5764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11653,8 +11801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55, y: -35}
-  m_SizeDelta: {x: 130, y: 90}
+  m_AnchoredPosition: {x: -56.888466, y: -32.19103}
+  m_SizeDelta: {x: 83.3912, y: 148.4335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1943124482
 GameObject:

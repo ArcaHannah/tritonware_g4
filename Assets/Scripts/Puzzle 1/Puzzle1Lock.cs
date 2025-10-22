@@ -102,31 +102,4 @@ public class Puzzle1Lock : MonoBehaviour
     }
 
 
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (lockComplete == true)
-        {
-            if (inventoryController.HasItem("Key") && inventoryController.HasItem("Eyeball") && eyeballDialogueFinished == false)
-            {
-                inventoryController.RemoveItem("Key");
-                
-                eyeballDialogueFinished = true;
-            }
-            else if (eyeballDialogueFinished)
-            {
-                //ft.lines[0] = "* Ants march along the inside of the drawer from the open snack bags and food containers.";
-                //ft.lines[1] = "* You try to recall the last thing you ate.";
-                ft.lines[0] = null;
-                ft.lines[1] = null;
-                GetComponent<FlavorText>().enabled = false;
-            }
-        }
-    }*/
-
-    /*void OnCollisionExit2D(Collision2D collision)
-    {
-        ft.lines[0] = "";
-        ft.lines[1] = "";
-    }*/
-
 }
