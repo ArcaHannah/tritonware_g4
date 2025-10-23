@@ -1557,8 +1557,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - '* One of the burners is colored in with a red crayon.'
-  - '* To the right of it, a knife had been embedded within the meat..'
+  - '* The stovetop is covered in grime, as always.'
+  - '* To the right of it, a knife had been embedded within the meat.'
 --- !u!61 &228599951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6055,6 +6055,8 @@ MonoBehaviour:
   lines:
   - '* Something glints from inside the wall.\n* You''re careful to retrieve the
     knife.'
+  - '* For a moment, you catch a glimpse of someone reflected in the glass.'
+  - '* Stay focused. He can''t scare you.'
 --- !u!1 &859064106
 GameObject:
   m_ObjectHideFlags: 0
@@ -10988,8 +10990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - '* This carcass has a wound in it.\n* You try not to touch it as you pulled out
-    the knife within.'
+  - '* You don''t want to touch it.\n* But you have no other choice.'
+  - '* Your sleeve gets sticky as you take the knife out of it.'
 --- !u!1 &1695522522
 GameObject:
   m_ObjectHideFlags: 0
@@ -13093,6 +13095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - '* The stench of rot fills the entire house.'
+  - '* You almost don''t recognize this place anymore.'
 --- !u!61 &2098749548
 BoxCollider2D:
   m_ObjectHideFlags: 0

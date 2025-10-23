@@ -15,11 +15,12 @@ public class Puzzle1Lock : MonoBehaviour
     public TMP_Text slot2;
     public TMP_Text slot3;
     public TMP_Text slot4;
+    private Collider2D collectibleItemCollider;
 
     public PuzzleInfo info;
     public InventoryController inventoryController;
     public FlavorText ft;
-    private bool hasKey = false;
+    public bool collectedKey = false;
     private bool bedroomEyeball = false;
 
 
@@ -61,14 +62,16 @@ public class Puzzle1Lock : MonoBehaviour
                 PuzzleComplete();
             }
         }
-        else if (hasKey == false && inventoryController.HasItem("Key"))
+        else if (inventoryController.HasItem("Key") && collectedKey == false && (collectibleItemCollider != null))
         {
             transform.Find("Eyeball").gameObject.SetActive(true);
+            collectedKey = true;
             ft.lines[0] = "* The lock unlatches, and you open the drawer.\n* Something unsickly writhes at the bottom.";
             ft.lines[1] = "* The eyeball flails in your hand, the pupil scanning the room in a frenzy.";
-            hasKey = true; // this boolean is so that this else if block only runs once when the player has key
         }
-        if (bedroomEyeball == false && hasKey == true && inventoryController.HasItem("Eyeball"))
+        
+        // if E is pressed
+        if (bedroomEyeball == false && Input.GetKeyDown(KeyCode.E) && collectedKey == true && (collectibleItemCollider != null))
         {
             inventoryController.RemoveItem("Key");
             bedroomEyeball = true;
@@ -85,20 +88,20 @@ public class Puzzle1Lock : MonoBehaviour
     {
         lockUI.SetActive(false);
         tag = "Flavor Text";
-        if (inventoryController.HasItem("Key") == false)
-        {
-            GetComponent<FlavorText>().enabled = true;
-        }
-        else //OK I KNOW THIS IS SPAGHETTI CODE BUT IVE BEEN WORKING ON THIS PUZZLE FOR LIKE 3 DAYS
-        {
-            inventoryController.RemoveItem("Key");
-            transform.Find("Eyeball").gameObject.SetActive(true);
-            ft.lines[0] = "* The lock unlatches, and you open the drawer.\n* Something unsickly writhes at the bottom.";
-            ft.lines[1] = "* The eyeball flails in your hand, the pupil scanning the room in a frenzy.";
-            hasKey = true; // this boolean is so that this else if block only runs once when the player has key
-        }
+        GetComponent<FlavorText>().enabled = true;
         SendMessage("SetComplete");
         info.isComplete = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        collectibleItemCollider = collision.collider;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collectibleItemCollider = null;
     }
 
 
