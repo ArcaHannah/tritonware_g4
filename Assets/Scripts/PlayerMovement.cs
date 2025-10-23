@@ -25,7 +25,9 @@ public class PlayerMovement : MonoBehaviour
         // fully reset the game
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.R))
         {
+            InventoryController.eyeballCount = 0;
             SceneManager.LoadScene("gameFile");
+            Debug.Log("check: " + InventoryController.eyeballCount);
             Debug.Log("reset");
         }
     }

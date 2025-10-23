@@ -222,7 +222,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 19b227bf944c9004abe69d5ad8ff861f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 368e155bf9267084b91ecb6a5f5da2fc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
@@ -927,8 +927,8 @@ MonoBehaviour:
   textComponent: {fileID: 500889491}
   continueText: {fileID: 1481033458}
   lines:
-  - '*panting*\n* finally...'
-  - '* don''t try to hide - i got you now.'
+  - '* panting*\n* finally...'
+  - "* don't try to hide \u2014 i got you now."
   - '* ...do you really?'
   - 
   - 
@@ -936,6 +936,7 @@ MonoBehaviour:
   - '* oh right...\n* it was me.'
   - '* it was me all along.'
   textSpeed: 0.1
+  index: 0
 --- !u!114 &1215101750
 MonoBehaviour:
   m_ObjectHideFlags: 0
