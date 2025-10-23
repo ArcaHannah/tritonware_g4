@@ -18,7 +18,7 @@ public class Puzzle3Lock : MonoBehaviour
 
 
     public int[] currentCombo = new int[3];
-    public int[] correctCombo = {2, 2, 5};
+    public int[] correctCombo = {5, 2, 2};
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,7 +47,7 @@ public class Puzzle3Lock : MonoBehaviour
         }
         else
         {
-            
+            // dont delete this block
         }
     }
 

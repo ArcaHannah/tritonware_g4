@@ -42,11 +42,6 @@ public class puzzle2scripttest : MonoBehaviour
                         inventoryController.RemoveItem("Knife");
                     }
                 }
-
-                if (isComplete)
-                {
-                    ft.lines[1] = "* There's still one knife missing from the block.";
-                }
             }
         }
     }

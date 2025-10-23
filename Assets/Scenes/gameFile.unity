@@ -11310,7 +11310,7 @@ MonoBehaviour:
   inventoryController: {fileID: 1928198070}
   ft: {fileID: 1738566607}
   currentCombo: 000000000000000000000000
-  correctCombo: 020000000200000005000000
+  correctCombo: 050000000200000002000000
 --- !u!114 &1738566607
 MonoBehaviour:
   m_ObjectHideFlags: 0
