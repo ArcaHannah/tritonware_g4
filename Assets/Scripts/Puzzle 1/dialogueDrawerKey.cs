@@ -28,10 +28,13 @@ public class dialogueDrawerKey : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((updatedDialogue == false) && bedroomDrawer.GetComponent<InventoryController>().HasItem("Key"))
+        if (collision.gameObject.name == "PhotoDrawer")
         {
-            ftDrawer.lines[0] = "* It's a photo of your mother and you.\n* It's the only one you have.";
-            updatedDialogue = true;
+            if ((updatedDialogue == false) && bedroomDrawer.GetComponent<InventoryController>().HasItem("Key"))
+            {
+                ftDrawer.lines[0] = "* It's a photo of your mother and you.\n* It's the only one you have.";
+                updatedDialogue = true;
+            }
         }
     }
 

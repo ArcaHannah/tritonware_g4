@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,8 +21,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = moveInput * moveSpeed;
-    }
 
+        // fully reset the game
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene("gameFile");
+            Debug.Log("reset");
+        }
+    }
     public void Move(InputAction.CallbackContext context)
     {
         animator.SetBool("isWalking", true);

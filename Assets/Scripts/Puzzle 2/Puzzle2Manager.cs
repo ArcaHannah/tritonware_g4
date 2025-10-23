@@ -12,6 +12,7 @@ public class puzzle2scripttest : MonoBehaviour
     public FlavorText ft;
     private Collider2D collectibleItemCollider;
     private bool stopUpdatingKnives = false;
+    private bool hasCollectedEyeball = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,15 +32,21 @@ public class puzzle2scripttest : MonoBehaviour
                 {
                     inventoryController.RemoveItem("Knife");
                 }
-            }
-            if (stopUpdatingKnives == true && inventoryController.HasItem("Eyeball"))
-            {
-                isComplete = true;
-                if (inventoryController.inventoryPanel.transform.Find("Knife").gameObject.activeSelf == true)
+
+                if (stopUpdatingKnives == true && hasCollectedEyeball == true)
                 {
-                    inventoryController.RemoveItem("Knife");
+                    isComplete = true;
+                    ft.lines[0] = "* Something behind the knife block catches your eye.\n* A severed eyeball is staring straight at you.";
+                    if (inventoryController.inventoryPanel.transform.Find("Knife").gameObject.activeSelf == true)
+                    {
+                        inventoryController.RemoveItem("Knife");
+                    }
                 }
-                ft.lines[0] = "* There's still one knife missing from the block.";
+
+                if (isComplete)
+                {
+                    ft.lines[1] = "* There's still one knife missing from the block.";
+                }
             }
         }
     }
@@ -50,7 +57,7 @@ public class puzzle2scripttest : MonoBehaviour
         {
             transform.Find("Eyeball").gameObject.SetActive(true);
             stopUpdatingKnives = true;
-            ft.lines[0] = "* Something behind the knife block catches your eye.\n* A severed eyeball is staring straight at you.";
+            hasCollectedEyeball = true;
         }
         if (stopUpdatingKnives == false && isComplete == false && inventoryController.HasItem("Knife"))
         {
