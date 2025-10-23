@@ -222,7 +222,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 368e155bf9267084b91ecb6a5f5da2fc, type: 3}
+  m_Resource: {fileID: 8300000, guid: 19b227bf944c9004abe69d5ad8ff861f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
@@ -921,9 +921,9 @@ MonoBehaviour:
   background4: {fileID: 1948279749}
   mcCG: {fileID: 1753221359}
   shadowCG: {fileID: 73254011}
-  moveDistance: 1
-  moveIterations: 700
-  moveDelay: 0.001
+  moveDistance: 5
+  moveIterations: 250
+  moveDelay: 0.0001
   textComponent: {fileID: 500889491}
   continueText: {fileID: 1481033458}
   lines:
